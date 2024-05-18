@@ -6,7 +6,7 @@ Tested on a rasberry pi running Debian 11
 
 Installing
 ----------
-See install.sh
+See installer.sh
 
 Setup Prometheus
 ----------------
