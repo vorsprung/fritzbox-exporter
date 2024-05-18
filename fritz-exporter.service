@@ -1,0 +1,16 @@
+[Unit]
+Description=Prometheus exporter for Fritzbox
+Documentation=https://github.com/vorsprung/fritz_exporter
+
+[Service]
+Restart=on-failure
+User=prometheus
+EnvironmentFile=/etc/default/fritz-exporter
+ExecStart=/usr/bin/fritz-exporter.py $ARGS
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
+
